@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="ClockApp.MainPage">
+   <Grid
+        BackgroundColor="{StaticResource BackgroundColor}"
+       >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--  Header Section  -->
+            <Grid Margin="20,40,20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="AUTO" />
+                </Grid.ColumnDefinitions>
+
+                 <Label
+                     Grid.Column="0"
+                     Style="{StaticResource Header}"
+                     Text="Clock">
+                </Label>
+                <Label
+                    Grid.Column="1"
+                     Style="{StaticResource Header}"
+                     Text="Manchester">
+                </Label>
+            </Grid>
+       <!-- Add new button -->
+       <Button
+           Grid.Row="3"
+           WidthRequest="50"
+           HeightRequest="50"
+           CornerRadius="25"
+           BackgroundColor="{StaticResource MainColor}"
+           HorizontalOptions="Center"
+           />
+
+       <!--  Active clocks  -->
+       <ScrollView
+            Grid.Row="4"
+            Margin="20,20,20,40"
+            HorizontalScrollBarVisibility="Never"
+            Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" Spacing="20">
+                <StackLayout Orientation="Vertical">
+                    <Frame
+                        BackgroundColor="{StaticResource MainColor}"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        CornerRadius="15"
+                        HasShadow="False"/>
+                </StackLayout>
+
+
+               <StackLayout Orientation="Vertical">
+                    <Frame
+                        BackgroundColor="{StaticResource MainColor}"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        CornerRadius="15"
+                        HasShadow="False"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Frame
+                        BackgroundColor="{StaticResource MainColor}"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        CornerRadius="15"
+                        HasShadow="False"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Frame
+                        BackgroundColor="{StaticResource MainColor}"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        CornerRadius="15"
+                        HasShadow="False"/>
+                </StackLayout>
+            </StackLayout>
+
+        </ScrollView>
+
+    </Grid>
+</ContentPage>
