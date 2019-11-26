@@ -131,4 +131,16 @@
       <Name>ClockApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Poppins-Bold.ttf" />
+    <BundleResource Include="Resources\Poppins-Light.ttf" />
+    <BundleResource Include="Resources\Poppins-SemiBold.ttf" />
+    <BundleResource Include="Resources\Poppins-Regular.ttf" />
+    <BundleResource Include="Resources\location_pin.png" />
+    <BundleResource Include="Resources\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\Clock.imageset\" />
+    <Folder Include="Assets.xcassets\clock.imageset\" />
+  </ItemGroup>
 </Project>

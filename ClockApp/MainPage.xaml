@@ -1,12 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="ClockApp.MainPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:ClockApp"
+             x:Class="ClockApp.MainPage">
    <Grid
         BackgroundColor="{StaticResource BackgroundColor}"
        >
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -17,19 +23,74 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="AUTO" />
+                    <ColumnDefinition Width="AUTO" />
                 </Grid.ColumnDefinitions>
 
                  <Label
                      Grid.Column="0"
-                     Style="{StaticResource Header}"
+                     Style="{StaticResource HeaderLabel}"
                      Text="Clock">
                 </Label>
-                <Label
+                <Image
                     Grid.Column="1"
-                     Style="{StaticResource Header}"
-                     Text="Manchester">
+                    HeightRequest="20"
+                    Source="location_pin">
+                    
+                </Image>
+
+                <Label
+                     Grid.Column="2"
+                     VerticalTextAlignment="Bottom"
+                     Style="{StaticResource NormalTextLabel}"
+                     Text="Manchester"
+                     Margin="0, 0, 0, 6">
                 </Label>
             </Grid>
+            <!-- Clock -->
+       <Grid
+           Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15*" />
+                    <ColumnDefinition Width="70*" />
+                    <ColumnDefinition Width="15*" />
+                </Grid.ColumnDefinitions>
+       
+            <Image
+                HorizontalOptions="FillAndExpand"
+                Grid.Column="1"
+                Source="clock"
+                x:Name="ClockFrame"
+                >
+            </Image>
+           <local:ClockHands
+               />
+           </Grid>
+       <!-- Clock Text-->
+            <StackLayout
+                HorizontalOptions="Center"
+                Grid.Row="2">
+                <Label
+                    HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Style="{StaticResource HeaderSpan}" Text="12:20" />
+                                <Span Style="{StaticResource NormalTextSpan}" Text=" PM" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                <Label
+                     Grid.Column="0"
+                     Style="{StaticResource NormalTextLabel}"
+                     Text="Monday"
+                    HorizontalTextAlignment="Center">
+                </Label>
+                <Label
+                     Grid.Column="0"
+                     Style="{StaticResource NormalTextLabel}"
+                     Text="23rd October"
+                    HorizontalTextAlignment="Center">
+                </Label>
+            </StackLayout>
        <!-- Add new button -->
        <Button
            Grid.Row="3"
@@ -38,51 +99,48 @@
            CornerRadius="25"
            BackgroundColor="{StaticResource MainColor}"
            HorizontalOptions="Center"
+           Text="+"
+           TextColor="#fff"
+           FontSize="42"
+           Padding="0, 0, 0, 6"
+           Margin="0, 20, 0, 0"
+           
            />
 
        <!--  Active clocks  -->
        <ScrollView
             Grid.Row="4"
-            Margin="20,20,20,40"
+            Margin="20,20,0,40"
             HorizontalScrollBarVisibility="Never"
             Orientation="Horizontal">
             <StackLayout Orientation="Horizontal" Spacing="20">
-                <StackLayout Orientation="Vertical">
                     <Frame
                         BackgroundColor="{StaticResource MainColor}"
-                        HeightRequest="50"
-                        WidthRequest="50"
+                        HeightRequest="45"
+                        WidthRequest="45"
                         CornerRadius="15"
-                        HasShadow="False"/>
-                </StackLayout>
-
-
-               <StackLayout Orientation="Vertical">
+                        HasShadow="False"
+                       />
                     <Frame
                         BackgroundColor="{StaticResource MainColor}"
-                        HeightRequest="50"
-                        WidthRequest="50"
+                        HeightRequest="45"
+                        WidthRequest="45"
                         CornerRadius="15"
                         HasShadow="False"/>
-                </StackLayout>
 
-                <StackLayout Orientation="Vertical">
                     <Frame
                         BackgroundColor="{StaticResource MainColor}"
-                        HeightRequest="50"
-                        WidthRequest="50"
+                        HeightRequest="45"
+                        WidthRequest="45"
                         CornerRadius="15"
                         HasShadow="False"/>
-                </StackLayout>
 
-                <StackLayout Orientation="Vertical">
                     <Frame
                         BackgroundColor="{StaticResource MainColor}"
-                        HeightRequest="50"
-                        WidthRequest="50"
+                        HeightRequest="45"
+                        WidthRequest="45"
                         CornerRadius="15"
                         HasShadow="False"/>
-                </StackLayout>
             </StackLayout>
 
         </ScrollView>

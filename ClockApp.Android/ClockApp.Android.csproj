@@ -83,6 +83,14 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable\location_pin.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\clock.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -92,6 +100,12 @@
       <Project>{7331AFA1-D31D-40B1-85D5-C30D7AA85499}</Project>
       <Name>ClockApp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poppins-Bold.ttf" />
+    <AndroidAsset Include="Assets\Poppins-Light.ttf" />
+    <AndroidAsset Include="Assets\Poppins-SemiBold.ttf" />
+    <AndroidAsset Include="Assets\Poppins-Regular.ttf" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
